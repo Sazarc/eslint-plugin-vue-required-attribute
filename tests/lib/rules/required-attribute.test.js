@@ -24,6 +24,10 @@ ruleTester.run('required-attribute', rule, {
       options: [[{ attribute: 'attribute', level: 'always' }]],
     },
     {
+      code: '<template><custom-tag :attribute="method(\'some-arg\')" /></template>',
+      options: [[{ attribute: 'attribute', level: 'always' }]],
+    },
+    {
       code: `<template>
   <custom-tag
     attribute="string"
