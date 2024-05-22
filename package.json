@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-vue-required-attribute",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add required attributes for Vue Elements in Vue Components",
   "keywords": [
     "eslint",
