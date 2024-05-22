@@ -20,6 +20,10 @@ ruleTester.run('required-attribute', rule, {
       options: [[{ attribute: 'attribute', level: 'always' }]],
     },
     {
+      code: '<template><custom-tag :attribute="`dynamic-string-${variable}`" /></template>',
+      options: [[{ attribute: 'attribute', level: 'always' }]],
+    },
+    {
       code: `<template>
   <custom-tag
     attribute="string"
@@ -89,6 +93,11 @@ ruleTester.run('required-attribute', rule, {
     },
     {
       code: '<template><custom-tag v-model="someVar" attribute="" /></template>',
+      options: [[{ attribute: 'attribute', level: 'v-model' }]],
+      errors: ['Attribute attribute required'],
+    },
+    {
+      code: '<template><custom-tag v-model="someVar" :attribute="" /></template>',
       options: [[{ attribute: 'attribute', level: 'v-model' }]],
       errors: ['Attribute attribute required'],
     },
